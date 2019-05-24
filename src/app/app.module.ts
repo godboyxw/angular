@@ -10,6 +10,7 @@ import { HeroComponent } from './components/hero/hero.component';
 import { SexReformPipe } from './components/pipe/sex-reform.pipe';
 import { SelectFilterPipe } from './components/pipe/select-filter.pipe';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TestPipe } from './components/pipe/test.pipe';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     HeroComponent,
     SexReformPipe,
     SelectFilterPipe,
+    TestPipe,
   ],
   imports: [
     BrowserModule,
