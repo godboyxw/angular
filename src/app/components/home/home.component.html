@@ -2,3 +2,68 @@
   <app-header></app-header>
   home works!
 </p>
+
+<img src="assets/images/1.png" alt="收藏" *ngIf="flag">
+
+<img [src]="url" alt="未收藏" *ngIf="!flag">
+
+<ul>
+  <li *ngFor="let item of list; let key=index;" [ngClass]="{red:key===1}">{{item.title}} ---{{key}}</li>
+</ul>
+
+
+<div *ngIf="flag">
+  <img src="assets/images/1.png" alt="收藏">
+</div>
+
+<div *ngIf="!flag">
+  <img [src]="url" alt="未收藏" *ngIf="!flag">
+</div>
+
+<ul [ngSwitch]="day">
+  <li *ngSwitchCase="0">星期天</li>
+  <li *ngSwitchCase="1">星期一</li>
+  <li *ngSwitchCase="2">星期二</li>
+  <li *ngSwitchCase="3">星期三</li>
+  <li *ngSwitchCase="4">星期四</li>
+  <li *ngSwitchCase="5">星期五</li>
+  <li *ngSwitchDefault>星期六</li>
+</ul>
+
+{{day}}
+
+<div [ngClass]="{class0:true,class1:true}" class="class">ngClass</div>
+
+<div [ngStyle]="{'background-color':'red','fontWeight':'bold'}">ngStyle</div>
+<!-- 需要加引号,不然识别为数据了,固定的值,属性一定要加引号,样式写成小驼峰或者烤串都可以 -->
+
+<div [ngStyle]="{'color':style}">从数据来的样式,不用加引号</div>
+
+<p>{{'abc'|uppercase}}</p>
+<!-- 一定记得在插值表达式{{}}中不加引号默认是变量数据,字符串需要加引号 -->
+<p>{{'ChinesePeople' | lowercase}}</p>
+
+<pre>{{jsonObject | json}}</pre>
+
+<p>my birthday is {{birthday | date:'MM/dd/y'}}</p>
+
+<p>{{'0.4352' | number:'3.2-3'}}</p>
+<!-- 000.435 -->
+
+<p>{{'0.203' | percent:'1.4-5'}}</p>
+<!-- 20.3000% -->
+<!-- 如果小数点后很多,以最大值为准,如果很少,以最小值为准(在后面加0),但必须保证最小值小于最大值,不然报错 -->
+
+<p>{{sliceArr | slice: 3:5}}</p>
+<!-- 4,5 -->
+
+<p>{{sex | sexReform}}</p>
+
+
+<input type="text" [(ngModel)]="name" #username (keyup.enter)="addUser(username.value)"  placeholder="输入联系人后回车添加">
+
+<ul>
+  <li *ngFor="let item of (contacts | selectFilter:'李')">{{item.name}}</li>
+</ul>
+
+

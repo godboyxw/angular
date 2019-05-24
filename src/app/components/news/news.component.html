@@ -6,3 +6,58 @@
 {{name}}
 <br>
 {{username}}
+
+<h1>{{userinfo.username}}</h1>
+<h1 ng-bind="student"></h1>
+<h3>{{message}}</h3>
+
+
+<div title="我是div">
+  鼠标瞄上去看一下
+</div>
+
+<div title="student">
+  学生
+</div>
+
+<div [title]="student">
+  学生
+</div>
+
+<div title="{{student}}">
+  学生
+</div>
+
+<div bind-title="student">
+  学生
+</div>
+
+<hr>
+
+<div [innerHTML]="content"></div>
+<div>{{content}}</div>
+<div ng-bind-html="content"></div>
+
+<hr />
+
+{{1+1+2}}
+
+<div *ngFor="let item of arr">{{item}}</div>
+
+<div *ngFor="let item of arr2">{{item}}</div>
+
+<ul>
+  <li *ngFor="let item of userList">{{item.username}}---{{item.age}}</li>
+</ul>
+
+<hr />
+
+<ul>
+  <li *ngFor="let item of cars"><h2>{{item.cate}}</h2>
+    <ul>
+      <li *ngFor="let i of item.lists">{{i.title}}</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
