@@ -8,10 +8,11 @@ import {toDoListData} from './to-do-list.data'
 export class ToDoListComponent implements OnInit {
 
   public task:string
+  search:string
+  searchArr : any[] = []
 
   doingArr:toDoListData[] = []
   doneArr:toDoListData[] = []
-
 
   constructor() {
     // console.log(this.doingArr);
@@ -29,9 +30,6 @@ export class ToDoListComponent implements OnInit {
     this.task = ''
     console.log(this.doingArr);
   }
-  // changeCheckbox(){
-  //   this.doingArr = this.doingArr.filter(item => {return item.checked === false})
-  // }
 
   deleteItem(key){
     this.doingArr.splice(key,1)
@@ -39,7 +37,6 @@ export class ToDoListComponent implements OnInit {
 
   finish(){
     let arr = []
-
     arr = this.doingArr.filter(item=>{
       return item.checked === true
     })
@@ -50,5 +47,17 @@ export class ToDoListComponent implements OnInit {
       return item.checked === false
     })
 
+  }
+
+  searchValue(){
+    this.searchArr.push(this.search)
+     console.log(new Set(this.searchArr));
+    this.searchArr = Array.from(new Set(this.searchArr)) //利用Set独一无二的数据对象进行数组的去重
+    console.log(this.searchArr);
+    this.search = ''
+  }
+
+  deleteListItem(key){
+    this.searchArr.splice(key,1)
   }
 }

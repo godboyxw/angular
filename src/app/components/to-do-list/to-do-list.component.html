@@ -14,7 +14,7 @@
         <input type="checkbox" [(ngModel)]="item.checked" >
         {{item.title}}
         <span (click)="deleteItem(key)">删除</span>
-        <button (click)="finish()">完成</button>
+        <span (click)="finish()">完成</span>
       </li>
     </ul>
 
@@ -31,4 +31,15 @@
         </li>
     </ul>
   </main>
+</div>
+
+
+<hr>
+
+<div class="wrapper">
+    <input type="text" [(ngModel)]="search"> <button (click)="searchValue()">搜索</button>
+    <hr>
+    <span class="lists" *ngFor="let item of searchArr;let key=index">
+      <span>{{item}}</span><span (click)="deleteListItem(key)">删除</span>
+    </span>
 </div>
