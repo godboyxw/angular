@@ -68,3 +68,20 @@
 
 <p>{{'xiangwei' | test}}</p>
 
+<p>{{today | date:'yyyy-MM-dd HH:mm:ss'}}</p>
+{{title}}
+<button (click)="run()">执行事件</button>
+<!-- run方法需要带小括号() -->
+<button (click)="getData()">getData</button>
+<button (click)="setData()">setData</button>
+
+<input type="text" (keydown)="keyDown($event)">
+<br>
+<input type="text" (keyup)="keyUp($event)">
+<br>
+<button (click)="getEventDom($event)">执行事件,获取事件对象</button>
+
+<input type="text" [(ngModel)]="value">
+{{value}}
+<br>
+<button (click)="changeValue()">改变表单的值</button>

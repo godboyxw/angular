@@ -7,8 +7,6 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class HomeComponent implements OnInit {
-
-
   url:string='https://www.baidu.com/img/bd_logo1.png'
 
   public list:any[] =[
@@ -43,6 +41,15 @@ export class HomeComponent implements OnInit {
   ]
 
   public name:string=''
+  today:any=new Date()
+  title:string='改变前的数据'
+
+  value:string='这是默认值'
+
+
+  constructor() {
+    console.log(this.today) //Sat May 25 2019 09:59:24 GMT+0800 (中国标准时间)
+  }
 
   addUser(name:string){
     // this.contacts.push({name:this.name})
@@ -53,10 +60,56 @@ export class HomeComponent implements OnInit {
     this.name = ''
   }
 
-  constructor() { }
-
   ngOnInit() {
 
   }
 
+  run(){
+    console.log('run')
+  }
+
+  getData(){
+    console.log(this.title)
+  }
+
+  setData(){
+    this.title="改变后的数据"
+  }
+
+  keyDown(e){
+    // console.log('keyDown')
+    console.log(e);
+    console.log(e.keyCode);
+    if(e.keyCode ===13){
+      console.log('按下enter键了');
+    }else{
+      console.log(e.target.value);
+      //e.target 获取当前对象
+      //e.target.value  获取当前对象的值
+    }
+  }
+
+  keyUp(e){
+    // console.log('keyDown')
+    console.log(e);
+    console.log(e.keyCode);
+    if(e.keyCode ===13){
+      console.log('按下enter键了');
+    }else{
+      console.log(e.target.value);
+      //e.target 获取当前对象
+      //e.target.value  获取当前对象的值
+    }
+  }
+
+  getEventDom(e){
+    console.log(e.target); //<button _ngcontent-rsj-c1="">执行事件,获取事件对象</button>
+    var dom:any = e.target
+    dom.style.color='red'
+  }
+
+  changeValue(){
+    this.value = '这是改变后的值'
+    console.log(this.value);
+  }
 }

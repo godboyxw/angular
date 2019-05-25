@@ -1,0 +1,34 @@
+<div class="box">
+  <header>
+    <span>ToDoList</span>
+    <input type="text" placeholder="添加ToDo" [(ngModel)]="task" (keyup.enter)="addContent()">
+  </header>
+  <main>
+    <div class="doing">
+      <span>正在进行</span>
+      <div>{{doingArr.length}}</div>
+    </div>
+    <ul>
+      <li *ngFor="let item of doingArr;let key=index">
+        <!-- {{item | json}} -->
+        <input type="checkbox" [(ngModel)]="item.checked" >
+        {{item.title}}
+        <span (click)="deleteItem(key)">删除</span>
+        <button (click)="finish()">完成</button>
+      </li>
+    </ul>
+
+    <div class="done">
+        <span>已经完成</span>
+        <div>{{doneArr.length}}</div>
+    </div>
+    <ul>
+        <li *ngFor="let item of doneArr;let key=index">
+          <!-- {{item | json}} -->
+          <input type="checkbox" [(ngModel)]="item.checked" >
+          {{item.title}}
+          <span (click)="deleteItem(key)">删除</span>
+        </li>
+    </ul>
+  </main>
+</div>

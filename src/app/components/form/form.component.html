@@ -1,0 +1,62 @@
+<div class="register">
+  <h2>人员登记系统</h2>
+
+  <div class="name">
+    <span>姓名</span>
+    <input type="text" [(ngModel)]="peopleInfo.username" id="username">
+    <!-- 中括号绑定属性,小括号绑定事件 -->
+  </div>
+
+  <div class="gender">
+    <span>性别</span>
+    <input type="radio" name="gender" value='1' id="gender1" [(ngModel)]="peopleInfo.gender"><label
+      for="gender1">男</label>
+    <input type="radio" name="gender" value='2' id="gender2" [(ngModel)]="peopleInfo.gender"><label
+      for="gender2">女</label>
+    <!-- label的目的是:选中后面的汉字时,会选中前面的radio单选框 -->
+  </div>
+
+  <div class="select">
+    <span>居住城市</span>
+    <select name="city" id="city" [(ngModel)]="peopleInfo.city" (change)="cityChange()">
+      <!-- <option value="武汉">武汉</option>
+      <option value="上海">上海</option>
+      <option value="北京">北京</option> -->
+      <!-- 结构类似的,我们用循环 -->
+      <option [value]="item" *ngFor="let item of peopleInfo.cityList">{{item}}</option>
+      <!-- peopleInfo.city和哪一个option相等,相等就把该option选中,同理当option改变时,会把值赋值给peopleInfo.city -->
+    </select>
+  </div>
+
+  <div class="checkbox">
+    <span>爱好</span>
+    <!-- <input type="checkbox" name="eat">吃饭
+    <input type="checkbox" name="sleep">睡觉
+    <input type="checkbox" name="tv">看电视 -->
+
+    <!-- <font *ngFor="let item of peopleInfo.hobby,let key=index">
+      <input type="checkbox" [id]="'check'+key" [checked]="item.checked"><label [for]="'check'+key">{{item.title}}</label> &nbsp;&nbsp;
+    </font> -->
+    <!-- [checked]="item.checked"绑定checked属性,这样只是单项数据绑定,渲染了后台数据,选中多选框,checked数据不会改变 -->
+
+    <font *ngFor="let item of peopleInfo.hobby,let key=index">
+        <input type="checkbox" [id]="'check'+key" [(ngModel)]="item.checked"><label [for]="'check'+key">{{item.title}}</label> &nbsp;&nbsp;
+    </font>
+    <!-- [(ngModel)]="item.checked"双向数据绑定,选中多选框,checked的值会对应改变(推荐) 多选框checkbox的值就是checked(true或者false)-->
+  </div>
+
+  <div class="textarea">
+    <span>特殊备注</span>
+    <textarea name="mark" id="mark" cols="25" rows="10" [(ngModel)]="peopleInfo.mark"></textarea>
+  </div>
+
+  <div class="wrapper">
+    <pre>
+        {{peopleInfo | json}}
+        <!-- 内置管道 -->
+    </pre>
+    <button (click)="doSubmit()">获取表单提交的内容</button>
+  </div>
+
+</div>
+
