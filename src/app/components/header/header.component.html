@@ -4,7 +4,7 @@
 
 <h3>列表导航栏</h3>
 
-<app-child [userInfo]="msg" #child></app-child>
+<app-child [userInfo]="msg" #child (outer)="getData($event)"></app-child>
 <!-- <button (click)="child.getChildFun()">父组件标记后,调用子组件方法</button> <br><br> -->
 <button (click)="getChildData()">父组件标记后,调用子组件方法</button> <br><br>
 
@@ -13,5 +13,12 @@
 <a routerLink="/lists/list/1">列表1</a>
 <a routerLink="/lists/list/2">列表2</a>
 <a routerLink="/lists/list/3">列表3</a>
+<a [routerLink]="['/lists/list',4]">列表4</a>
+
+<a [routerLink]="['/lists']" [queryParams]="{id:22}" >路由url传值</a>
+
+<!-- http://localhost:5500/lists?id=22 -->
+
+{{listsId}}
 
 <router-outlet></router-outlet>

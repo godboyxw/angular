@@ -38,6 +38,7 @@ const routes: Routes = [
   {
     path:'lists',
     component:HeaderComponent,
+    data:{isDone:true}, //在路由配置中传递数据
     children:[ //配置子路由
      {
       path:'list/:num', //配置动态路由

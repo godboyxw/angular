@@ -19,10 +19,13 @@ export class ListsDetailComponent implements OnInit {
     // console.log(Router);Router函数
     // console.log(ActivatedRoute);ActivatedRoute函数
 
-    this.route.params.subscribe(data => { //引用并打印出数据
+    this.route.params.subscribe((data:Params) => { //引用并打印出数据
       console.log(data); //{num: "2"}
       this.paramsData = data.num
     })
+
+    console.log(this.route.snapshot.params.num); //4
+    console.log(this.route.snapshot.params['num']) //4
   }
 
 }
