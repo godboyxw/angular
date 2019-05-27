@@ -1,3 +1,17 @@
 <p>
   header works!
 </p>
+
+<h3>列表导航栏</h3>
+
+<app-child [userInfo]="msg" #child></app-child>
+<!-- <button (click)="child.getChildFun()">父组件标记后,调用子组件方法</button> <br><br> -->
+<button (click)="getChildData()">父组件标记后,调用子组件方法</button> <br><br>
+
+<button (click)="goRouter()">点击跳转路由</button> <br><br>
+
+<a routerLink="/lists/list/1">列表1</a>
+<a routerLink="/lists/list/2">列表2</a>
+<a routerLink="/lists/list/3">列表3</a>
+
+<router-outlet></router-outlet>

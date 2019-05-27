@@ -26,6 +26,22 @@
 
 <!-- <app-form></app-form> -->
 
-<app-to-do-list></app-to-do-list>
+<!-- <app-to-do-list></app-to-do-list>
+
+<app-http></app-http> -->
+
+<ul class="router_lists">
+  <!-- <li><a routerLink="home" routerLinkActive="active">首页</a></li>
+  <li><a routerLink="http">http请求</a></li>
+  <li><a routerLink="todo">to-do-list</a></li>
+  <li><a routerLink="hero">hero</a></li>
+  <li><a routerLink="form">form表单</a></li>
+  <li><a routerLink="news">news</a></li> -->
+  <li *ngFor="let item of routes;let key=index" >
+    <a [routerLink]="item.path" [ngClass]="{'active':key==num}" (click)="clickRouter(key)">
+      {{item.title}}
+    </a>
+  </li>
+</ul>
 
 <router-outlet></router-outlet>

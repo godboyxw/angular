@@ -12,10 +12,14 @@ import { SexReformPipe } from './components/pipe/sex-reform.pipe';
 import { SelectFilterPipe } from './components/pipe/select-filter.pipe';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TestPipe } from './components/pipe/test.pipe';
-import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+// import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+
 import { InMemoryDataService }  from './in-memory-data.service';
 import { FormComponent } from './components/form/form.component';
 import { ToDoListComponent } from './components/to-do-list/to-do-list.component';
+import { HttpComponent } from './components/http/http.component';
+import { ListsDetailComponent } from './components/lists-detail/lists-detail.component';
+import { ChildComponent } from './components/child/child.component';
 
 @NgModule({
   declarations: [
@@ -28,17 +32,21 @@ import { ToDoListComponent } from './components/to-do-list/to-do-list.component'
     SelectFilterPipe,
     TestPipe,
     FormComponent,
-    ToDoListComponent
+    ToDoListComponent,
+    HttpComponent,
+    ListsDetailComponent,
+    ChildComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    HttpClientInMemoryWebApiModule,
-    HttpClientInMemoryWebApiModule.forRoot(
-      InMemoryDataService, { dataEncapsulation: false }
-    )
+
+    // HttpClientInMemoryWebApiModule,
+    // HttpClientInMemoryWebApiModule.forRoot(
+    //   InMemoryDataService, { dataEncapsulation: false }
+    // )
   ],
   providers: [],
   bootstrap: [AppComponent]
