@@ -31,11 +31,11 @@ export class ToDoListComponent implements OnInit {
     console.log(this.doingArr);
   }
 
-  deleteItem(key){
+  deleteItem(key:number){
     this.doingArr.splice(key,1)
   }
 
-  deleteItem2(key){
+  deleteItem2(key:number){
     this.doneArr.splice(key,1)
   }
 
@@ -75,7 +75,7 @@ export class ToDoListComponent implements OnInit {
     this.search = ''
   }
 
-  deleteListItem(key){
+  deleteListItem(key:number){
     this.searchArr.splice(key,1)
   }
 }

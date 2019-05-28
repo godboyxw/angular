@@ -8,11 +8,13 @@ import {Router,ActivatedRoute, Params}from '@angular/router'
 })
 
 export class HeaderComponent implements OnInit {
- @ViewChild('child')child
+ @ViewChild('child')child:any
 
   msg:string = '我是父组件,引用了子组件,并给他定义的不确定属性传值'
 
   private listsId:number
+
+  public filterArr:any[]=[1,2,2,4,6,1,'a','b','c','b']
 
   constructor(private routeInfo:ActivatedRoute,private router:Router) {}
 
@@ -45,7 +47,7 @@ export class HeaderComponent implements OnInit {
     console.log(this.child.info); //123
 }
 
-  getData(data) {
+  getData(data:any) {
     console.log(data); //通过Output,EventEmitter,子组件向父组件传值
 }
 }

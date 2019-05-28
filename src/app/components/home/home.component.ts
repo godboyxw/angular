@@ -76,7 +76,7 @@ export class HomeComponent implements OnInit {
     this.title="改变后的数据"
   }
 
-  keyDown(e){
+  keyDown(e:any){
     // console.log('keyDown')
     console.log(e);
     console.log(e.keyCode);
@@ -89,7 +89,7 @@ export class HomeComponent implements OnInit {
     }
   }
 
-  keyUp(e){
+  keyUp(e:any){
     // console.log('keyDown')
     console.log(e);
     console.log(e.keyCode);
@@ -102,7 +102,7 @@ export class HomeComponent implements OnInit {
     }
   }
 
-  getEventDom(e){
+  getEventDom(e:any){
     console.log(e.target); //<button _ngcontent-rsj-c1="">执行事件,获取事件对象</button>
     var dom:any = e.target
     dom.style.color='red'

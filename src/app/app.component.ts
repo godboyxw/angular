@@ -39,7 +39,7 @@ export class AppComponent {
     }
   ]
 
-  clickRouter(key){
+  clickRouter(key:number){
     this.num=key
   }
 }

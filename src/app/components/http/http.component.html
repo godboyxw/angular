@@ -1,2 +1,7 @@
 <div *ngFor="let item of dataArr">{{item}}</div>
 
+<div [@openClose]="isOpen ? 'open' : 'closed'" class="open-close-container">
+  <p>The box is now {{ isOpen ? 'Open' : 'Closed' }}!</p>
+</div>
+
+<button (click)="toggle()">toggle</button>

@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { HttpClientModule }    from '@angular/common/http';
 
@@ -20,6 +21,7 @@ import { ToDoListComponent } from './components/to-do-list/to-do-list.component'
 import { HttpComponent } from './components/http/http.component';
 import { ListsDetailComponent } from './components/lists-detail/lists-detail.component';
 import { ChildComponent } from './components/child/child.component';
+import { FilterPipe } from './components/pipe/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -35,10 +37,12 @@ import { ChildComponent } from './components/child/child.component';
     ToDoListComponent,
     HttpComponent,
     ListsDetailComponent,
-    ChildComponent
+    ChildComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
