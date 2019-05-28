@@ -31,11 +31,11 @@ const headers =new HttpHeaders().set("Content-type","application/json; charset=U
       })),
       //从1过渡到2
       transition('open => closed', [
-        animate('1s')
+        animate('1s 0.5s ease-in-out')
       ]),
       //从2过渡到1
       transition('closed => open', [
-        animate('0.5s')
+        animate('0.5s 1s linear')
       ]),
     ]),
   ]
