@@ -29,6 +29,12 @@ export class HeaderComponent implements OnInit {
       console.log(this.listsId);
     })
 
+    console.log('queryParamMap',this.routeInfo.queryParamMap); //AnonymousSubject
+    this.routeInfo.queryParamMap.subscribe((queryParams:Params) => {
+      console.log(queryParams);
+      console.log(queryParams.params.id); //22
+    })
+
     //接收在在路由配置中,传递的数据
     console.log(this.routeInfo.data);
     this.routeInfo.data.subscribe((data:Params) => {

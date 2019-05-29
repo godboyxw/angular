@@ -13,7 +13,8 @@ export class ListsDetailComponent implements OnInit {
   constructor(private route:ActivatedRoute) { } //实例化模块
 
   ngOnInit() {
-    console.log(this.route.params)//是一个observe的对象
+    console.log('params',this.route.params)//BehaviorSubject,是一个observe的对象
+    console.log('paramMap',this.route.paramMap); //AnonymousSubject 
 
     // console.log(Params); Params仅表示类型
     // console.log(Router);Router函数

@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'AngularDemo1111111111';
-  num:number=0
+  num:number
   routes:any=[
     {
       path:'home',

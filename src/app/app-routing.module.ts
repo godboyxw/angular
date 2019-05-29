@@ -13,7 +13,9 @@ import {ListsDetailComponent} from './components/lists-detail/lists-detail.compo
 const routes: Routes = [
   {
     path:'',
-    component:HomeComponent
+    // component:HomeComponent
+    redirectTo:'/home',
+    pathMatch:'full'
   },
   {
     path:'home',

@@ -20,9 +20,15 @@
   <li><a routerLink="form">form表单</a></li>
   <li><a routerLink="news">news</a></li> -->
   <li *ngFor="let item of routes;let key=index" >
-    <a [routerLink]="item.path" [ngClass]="{'active':key==num}" (click)="clickRouter(key)">
+    <!-- <a [routerLink]="item.path" [ngClass]="{'active':key==num}" (click)="clickRouter(key)">
+      {{item.title}}
+    </a> -->
+    <!-- 刷新页面,绑定的class会出问题 -->
+
+    <a [routerLink]="item.path" routerLinkActive="active">
       {{item.title}}
     </a>
+    <!-- routerLinkActive,都具有这个属性,点击时,会新增active类名,其他的兄弟元素会清除类名,保证具有被选中的样式 -->
   </li>
 </ul>
 <div class="box"></div>
