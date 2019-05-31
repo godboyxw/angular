@@ -22,6 +22,15 @@ export class HeaderComponent implements OnInit {
     console.log(this.routeInfo.snapshot.queryParams.id); //22
     console.log(this.routeInfo.snapshot.queryParams['id']); //22
 
+    console.log(this.routeInfo.routeConfig); //{path: "lists", component: ƒ, data: {…}, children: Array(1)}
+    //routeConfig,用于该路由的路由配置信息，其中包含原始路径。
+
+    console.log('url',this.routeInfo.url);
+    this.routeInfo.url.subscribe((url:Params) => {
+      console.log(url); //[UrlSegment]
+      console.log(url[0].path); //lists
+    })
+
     console.log(this.routeInfo.queryParams);
     this.routeInfo.queryParams.subscribe((params:Params) => { //通过queryParams来获取查询字符串的对象数据
       this.listsId=params['id']

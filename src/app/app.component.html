@@ -25,10 +25,11 @@
     </a> -->
     <!-- 刷新页面,绑定的class会出问题 -->
 
-    <a [routerLink]="item.path" routerLinkActive="active">
+    <a [routerLink]="item.path" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" #rla="routerLinkActive">
       {{item.title}}
+      <div>{{rla.isActive ? '激活' : '未激活'}}</div>
     </a>
-    <!-- routerLinkActive,都具有这个属性,点击时,会新增active类名,其他的兄弟元素会清除类名,保证具有被选中的样式 -->
+    <!-- routerLinkActive,都具有这个属性,点击时,会新增active类名,其他的兄弟元素会清除类名,保证点击的那项具有被选中的样式 -->
   </li>
 </ul>
 <div class="box"></div>
